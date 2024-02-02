@@ -77,7 +77,7 @@ namespace GLSLPT
             //--------------------------------------------
             // Material
 
-            if (sscanf(line, " material %s", name) == 1)
+            if (sscanf(line, " Material %s", name) == 1)
             {
                 Material material;
                 char albedoTexName[100] = "none";
@@ -95,24 +95,24 @@ namespace GLSLPT
 
                     sscanf(line, " color %f %f %f", &material.baseColor.x, &material.baseColor.y, &material.baseColor.z);
                     sscanf(line, " opacity %f", &material.opacity);
-                    sscanf(line, " alphamode %s", alphaMode);
-                    sscanf(line, " alphacutoff %f", &material.alphaCutoff);
+                    sscanf(line, " alphaMode %s", alphaMode);
+                    sscanf(line, " alphaCutoff %f", &material.alphaCutoff);
                     sscanf(line, " emission %f %f %f", &material.emission.x, &material.emission.y, &material.emission.z);
                     sscanf(line, " metallic %f", &material.metallic);
                     sscanf(line, " roughness %f", &material.roughness);
                     sscanf(line, " subsurface %f", &material.subsurface);
-                    sscanf(line, " speculartint %f", &material.specularTint);
+                    sscanf(line, " specularTint %f", &material.specularTint);
                     sscanf(line, " anisotropic %f", &material.anisotropic);
                     sscanf(line, " sheen %f", &material.sheen);
                     sscanf(line, " sheentint %f", &material.sheenTint);
                     sscanf(line, " clearcoat %f", &material.clearcoat);
-                    sscanf(line, " clearcoatgloss %f", &material.clearcoatGloss);
-                    sscanf(line, " spectrans %f", &material.specTrans);
+                    sscanf(line, " clearcoatGloss %f", &material.clearcoatGloss);
+                    sscanf(line, " specTrans %f", &material.specTrans);
                     sscanf(line, " ior %f", &material.ior);
-                    sscanf(line, " albedotexture %s", albedoTexName);
-                    sscanf(line, " metallicroughnesstexture %s", metallicRoughnessTexName);
-                    sscanf(line, " normaltexture %s", normalTexName);
-                    sscanf(line, " emissiontexture %s", emissionTexName);
+                    sscanf(line, " albedoTexture %s", albedoTexName);
+                    sscanf(line, " metallicRoughnessTexture %s", metallicRoughnessTexName);
+                    sscanf(line, " normalTexture %s", normalTexName);
+                    sscanf(line, " emissionTexture %s", emissionTexName);
                     sscanf(line, " mediumtype %s", mediumType);
                     sscanf(line, " mediumdensity %f", &material.mediumDensity);
                     sscanf(line, " mediumcolor %f %f %f", &material.mediumColor.x, &material.mediumColor.y, &material.mediumColor.z);
@@ -162,7 +162,7 @@ namespace GLSLPT
             //--------------------------------------------
             // Light
 
-            if (strstr(line, "light"))
+            if (strstr(line, "Light"))
             {
                 Light light;
                 Vec3 v1, v2;
@@ -207,7 +207,7 @@ namespace GLSLPT
             //--------------------------------------------
             // Camera
 
-            if (strstr(line, "camera"))
+            if (strstr(line, "Camera"))
             {
                 Mat4 xform;
                 Vec3 position;
@@ -223,7 +223,7 @@ namespace GLSLPT
                         break;
 
                     sscanf(line, " position %f %f %f", &position.x, &position.y, &position.z);
-                    sscanf(line, " lookat %f %f %f", &lookAt.x, &lookAt.y, &lookAt.z);
+                    sscanf(line, " lookAt %f %f %f", &lookAt.x, &lookAt.y, &lookAt.z);
                     sscanf(line, " aperture %f ", &aperture);
                     sscanf(line, " focaldist %f", &focalDist);
                     sscanf(line, " fov %f", &fov);
@@ -254,7 +254,7 @@ namespace GLSLPT
             //--------------------------------------------
             // Renderer
 
-            if (strstr(line, "renderer"))
+            if (strstr(line, "Renderer"))
             {
                 char envMap[200] = "none";
                 char enableRR[10] = "none";
@@ -279,10 +279,10 @@ namespace GLSLPT
                     sscanf(line, " resolution %d %d", &renderOptions.renderResolution.x, &renderOptions.renderResolution.y);
                     sscanf(line, " windowresolution %d %d", &renderOptions.windowResolution.x, &renderOptions.windowResolution.y);
                     sscanf(line, " envmapintensity %f", &renderOptions.envMapIntensity);
-                    sscanf(line, " maxdepth %i", &renderOptions.maxDepth);
+                    sscanf(line, " maxDepth %i", &renderOptions.maxDepth);
                     sscanf(line, " maxspp %i", &renderOptions.maxSpp);
-                    sscanf(line, " tilewidth %i", &renderOptions.tileWidth);
-                    sscanf(line, " tileheight %i", &renderOptions.tileHeight);
+                    sscanf(line, " tileWidth %i", &renderOptions.tileWidth);
+                    sscanf(line, " tileHeight %i", &renderOptions.tileHeight);
                     sscanf(line, " enablerr %s", enableRR);
                     sscanf(line, " rrdepth %i", &renderOptions.RRDepth);
                     sscanf(line, " enabletonemap %s", enableTonemap);
@@ -374,7 +374,7 @@ namespace GLSLPT
             //--------------------------------------------
             // Mesh
 
-            if (strstr(line, "mesh"))
+            if (strstr(line, "Mesh"))
             {
                 std::string filename;
                 Vec4 rotQuat;

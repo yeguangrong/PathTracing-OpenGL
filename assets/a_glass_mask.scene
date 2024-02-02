@@ -1,0 +1,70 @@
+Renderer
+{
+	resolution 960 600
+	maxDepth 8
+	tileWidth 100
+	tileHeight 100
+}
+
+Camera
+{
+	position 0 0.46 1.7
+	lookAt 0 0.16 -0.1
+	fov 30
+}
+
+
+Material GlassMask
+{
+	color 1.0 1.0 1.0
+	specTrans 1.0
+	roughness 0.0
+	ior 1.7
+}
+
+Material Floor
+{
+	albedoTexture glass_mask/textures/floor.jpg
+	roughness 0.01
+}
+
+Mesh
+{
+	file  glass_mask/mask.obj
+	material GlassMask
+	position 0.0 0.0 0.0
+	scale 0.03 0.03 0.03
+}
+
+Mesh
+{
+	file  glass_mask/floor.obj
+	material Floor
+}
+
+Light
+{
+	type quad
+	position -0.359309 0.449693 -0.010809
+	v1 -0.1966 0.449693 0.339
+	v2 -0.359309 0.027337 -0.010809
+	emission 4.0 4.0 4.0
+}
+
+Light
+{
+	type quad
+	position 0.320673 0.027337 0.228975
+	v1  0.320673 0.476 0.228975
+	v2  0.320673 0.027337 -0.1375
+	emission 4.0 4.0 4.0
+}
+
+Light
+{
+	type quad
+	position 0.230128 0.50385 0.267372
+	v1 -0.230128 0.50385 0.267372
+	v2 0.230128 0.50385 -0.1927
+	emission 4.0 4.0 4.0
+}
