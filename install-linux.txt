@@ -2,7 +2,7 @@ Instructions for building:
 
   * apt-get install libsdl2-dev
 
-  * git clone https://github.com/yeguangrong/PathTracking-OpenGL.git
+  * git clone https://github.com/yeguangrong/PathTracing-OpenGL.git
 
   * OpenImageDenoise: Copy linux64 libraries from https://github.com/OpenImageDenoise/oidn/releases/tag/v1.2.4 to thirdparty/oidn/lib folder
 

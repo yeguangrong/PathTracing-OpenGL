@@ -2,7 +2,7 @@ Instructions for building:
 
   * brew install sdl2 open-image-denoise
 
-  * git clone https://github.com/yeguangrong/PathTracking-OpenGL.git
+  * git clone https://github.com/yeguangrong/PathTracing-OpenGL.git
 
   * mkdir build
 
